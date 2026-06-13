@@ -33,7 +33,7 @@ You may ask why. Well, for fixing problems like:
 
 ## Installation and requirements
 
-All you need to do is [install dotnet](https://dotnet.microsoft.com/en-us/download), [download the MLCS file]([https://github.com/GREYCAPMAN/MLCS](https://github.com/graycapman/MLCS-Multy-Layer-Cypher-Syestem)), unzip it and run `run.bat`.
+All you need to do is [install dotnet](https://dotnet.microsoft.com/en-us/download), [download the MLCS file](https://github.com/graycapman/MLCS-Multy-Layer-Cypher-Syestem), unzip it and run `run.bat`.
 
 That's it.
 
