@@ -43,6 +43,8 @@ That's it.
 - Ciphertext length equals plaintext length, which leaks message size
 - Seed space is limited to `Int32` range (~4 billion per seed)
 
+if you want to support me 
+
 ## License
 
 [MIT](LICENSE)
