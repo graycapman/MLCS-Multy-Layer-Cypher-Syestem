@@ -1,47 +1,58 @@
-# MLCS — Multi Layer Cypher System
+# MLCS. Multi Layer Cypher System
 
-I tried to fix some of the biggest cypher systems problems with this project.
+I was trying to solve some of the problems that people have with cypher systems when I made this project.
 
 ## How it works
 
-In simple words:
+To put it
 
 ```
+
 User text → XOR layer → Substitution → Permutation → Encrypted text
+
 ```
 
-Decryption goes backwards.
+When you want to decrypt the text it goes backwards.
 
-Don't know what those mean? Here's a quick explanation:
+Maybe you do not know what all these things mean. So here is an explanation:
 
-- **XOR** — changes every character to a random one that some don't even exist on keyboards and need to be translated to Base64.
-- **Substitution** — changes the characters' positions in the text.
-- **Permutation** — rearranges the order of characters (like shuffling a deck of cards).
+- **XOR**. This changes every character to a random one that you might not even be able to type on your keyboard and it needs to be translated to Base64.
 
-### Why this and not just another seed-based cypher?
+- **Substitution**. This replaces each character with an another using a special table that was made with a seed.
 
-One of the things my code uses is **chunks** (in advance mode). In simple words, it cuts the text into as many parts as you have seeds, with different seeds for each part.
+- **Permutation**. This rearranges the order of the characters like when you shuffle a deck of cards.
 
-You may ask why. Well, for fixing problems like:
+### Why I made this and not just another seed-based cypher
+
+One of the things that my code uses is **chunks**. To put it simply it cuts the text into many parts as you have seeds and each part uses a different seed.
+
+You might wonder why I did this. Well it helps to fix problems like:
 
 | Problem | How MLCS helps |
+
 |---------|----------------|
-| Frequency analysis ([learn more](https://en.wikipedia.org/wiki/Frequency_analysis)) | Each chunk uses a different substitution table, so letter frequencies are blended across the message |
-| Pattern detection | The same word in different chunks gets different treatment |
-| Known plaintext attack | Attacker needs to know seed count + seed values + seed order — all three at once |
-| Brute force | Each seed can be any `Int32` value (~4 billion), with multiple seeds the space grows fast |
+
+| Frequency analysis ([learn more](https://en.wikipedia.org/wiki/Frequency_analysis)) | Each chunk uses a substitution table so the frequencies of the letters get mixed up across the message.
+
+| Pattern detection | When the same word is in chunks it gets treated differently.
+
+| Known plaintext attack | The person trying to attack needs to know how many seeds there are, what the seeds are and the order of the seeds. All at the same time.
+
+| Brute force | Each seed can be any number up to about 4 billion. When you have multiple seeds the number of possibilities gets really big really fast.
 
 ## Installation and requirements
 
-All you need to do is [install dotnet](https://dotnet.microsoft.com/en-us/download), [download the MLCS file](https://github.com/graycapman/MLCS-Multy-Layer-Cypher-Syestem), unzip it and run `run.bat`.
+All you have to do is install dotnet download the MLCS file, unzip it and run the run.bat file.
 
-That's it.
+That is it.
 
 ## Known issues
 
-- No authentication — ciphertext can be modified without detection
-- Ciphertext length equals plaintext length, which leaks message size
-- Seed space is limited to `Int32` range (~4 billion per seed)
+- There is no authentication so someone could change the encrypted text without anyone noticing.
+
+- The length of the encrypted text is the same as the length of the text, which means that someone could figure out how long the message is.
+
+- The seeds can only be numbers up, to about 4 billion which is a limit.
 
 ## License
 
