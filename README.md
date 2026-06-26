@@ -29,7 +29,7 @@ You might wonder why I did this. Well it helps to fix problems like:
 
 ## Installation and requirements
 
-All you have to do is [install dotnet](https://dotnet.microsoft.com/en-us/download), [download the MLCS file](https://github.com/graycapman/MLCS-Multy-Layer-Cypher-Syestem), unzip it and run the run.bat file.
+All you have to do is [install dotnet](https://dotnet.microsoft.com/en-us/download), [download the MLCS file](https://github.com/graycapman/MLCS-Multy-Layer-Cypher-System), unzip it and run the run.bat file.
 
 That is it.
 
